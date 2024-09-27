@@ -1,0 +1,72 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Fondo claro */
+    color: #333;
+    line-height: 1.6;
+    text-align: center; /* Centra el texto de forma global */
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    background-color: #333; /* Color de fondo de la barra */
+    padding: 10px 0;
+}
+
+.navbar-holder {
+    display: flex;
+    justify-content: center; /* Centra los elementos en la barra */
+    max-width: 1200px; /* Esto limita el ancho máximo de la barra para que no ocupe todo el ancho de la pantalla */
+    margin: 0 auto; /* Centra el holder si es más pequeño que la pantalla */
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none; /* Elimina las viñetas de la lista */
+}
+
+.navbar ul li {
+    margin: 0 20px; /* Espaciado entre los elementos de la lista */
+}
+
+.navbar ul li a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color */
+}
+
+.navbar ul li a:hover {
+    background-color: #575757; /* Color de fondo cuando se pasa el ratón por encima */
+    border-radius: 4px; /* Añade bordes redondeados */
+}
+
+/* Estilos de la sección principal */
+section {
+    padding: 20px;
+    text-align: center; /* Centra el contenido de la sección */
+}
+
+section img {
+    display: block;
+    margin: 20px auto; /* Centra la imagen horizontalmente */
+    border-radius: 10px;
+}
+
+/* Estilos del pie de página */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
