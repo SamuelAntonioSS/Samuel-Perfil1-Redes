@@ -7,11 +7,7 @@
 
 /* Estilos generales del cuerpo */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; /* Fondo claro */
-    color: #333;
-    line-height: 1.6;
-    text-align: center; /* Centra el texto de forma global */
+    background-color: #72bbdd;
 }
 
 /* Estilos de la barra de navegación */
@@ -69,4 +65,86 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+hr {
+    border: 1px solid red; /* Cambia "red" al color que desees */
+    margin: 20px 0; /* Espaciado alrededor del <hr> */
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px; /* Distancia desde la derecha */
+    background-color: #333; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 50%; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 20px; /* Tamaño de la fuente */
+    display: none; /* Ocultar inicialmente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.scroll-to-top:hover {
+    background-color: #e07272; /* Color de fondo al pasar el ratón */
+}
+
+.pispile {
+    border: none; /* Eliminar el borde por defecto */
+    height: 2px; /* Altura de la línea */
+    background-color: red; /* Color de la línea */
+    animation: pispile 1s infinite; /* Aplicar la animación */
+}
+
+@keyframes pispile {
+    0% {
+        opacity: 1; /* Totalmente visible */
+    }
+    50% {
+        opacity: 0; /* Totalmente invisible */
+    }
+    100% {
+        opacity: 1; /* Vuelve a ser visible */
+    }
+}
+
+
+.carrusel {
+    position: relative;
+    max-width: 600px; /* Ajusta según tu necesidad */
+    margin: auto;
+    overflow: hidden; /* Oculta las imágenes que no están en vista */
+}
+
+.carrusel-imagenes {
+    display: flex; /* Las imágenes estarán en fila */
+    transition: transform 0.5s ease; /* Transición suave */
+}
+
+.carrusel-imagenes img {
+    max-width: 100%;
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1; /* Asegura que los botones estén por encima */
+}
+
+.prev {
+    left: 10px; /* Botón izquierdo */
+}
+
+.next {
+    right: 10px; /* Botón derecho */
 }

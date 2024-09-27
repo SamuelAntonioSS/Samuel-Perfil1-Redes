@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Elementos de Red</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -13,20 +13,144 @@
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="componentes.html">Componentes de Red</a></li>
+                    <li><a href="Herramientas.html">Herraminetas</a></li>
+                    <li><a href="Referencias.html">Referencias</a></li>
+
+
                 </ul>
             </div>
         </nav>
     </header>
     
-    <section>
+    <section class="contenido">
         <h1>Bienvenido a la Página de Elementos de Red</h1>
+        <br>
+        <br>
         <p>En esta página encontrarás información sobre los componentes pasivos y activos de una red, con descripciones técnicas y ejemplos.</p>
-        <img src="imagenes/maxresdefault.jpg" alt="" width="600" height="400">
+        <br>
+        <br>
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        
+        <div class="carrusel">
+            <div class="carrusel-imagenes">
+                <img src="imagenes/maxresdefault.jpg" alt="Imagen 1"width="600" height="400">
+                <img src="imagenes/componentes-de-una-red.jpg" alt="Imagen 2"width="900" height="900">
+                <img src="imagenes/redes.jpg" alt="Imagen 3"width="600" height="600">
+            </div>
+            <button class="prev" onclick="cambiarImagen(-1)">&#10094;</button>
+            <button class="next" onclick="cambiarImagen(1)">&#10095;</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+        <hr class="pispile">      
+
+
+
+
+
+        <h1>Recreación del laboratorio 6</h1>
+
+        <img src="imagenes/lab 6 diagrama.PNG" alt="Imagen 1"width="600" height="400">
+        <br>
+        <br>
+
 
     </section>
+
+
     
     <footer>
-        <p>&copy; 2024 - Proyecto de Redes</p>
+        <p>&copy; 2024 - Samuel Antonio Sánchez Sánchez - Segundo año Desarrollo de software</p>
     </footer>
+    <a href="#" id="scrollToTop" class="scroll-to-top">↑</a>
+
+
+
+    <script>
+        let index = 0; // Índice de la imagen actual
+        const imagenes = document.querySelectorAll('.carrusel-imagenes img');
+        const intervaloTiempo = 3000; // Cambia de imagen cada 3 segundos
+        let intervalo;
+    
+        function mostrarImagen() {
+            // Oculta todas las imágenes
+            imagenes.forEach((img, i) => {
+                img.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+    
+        function cambiarImagen(n) {
+            index += n; // Cambia el índice
+            if (index < 0) index = imagenes.length - 1; // Regresa al final si está al principio
+            if (index >= imagenes.length) index = 0; // Regresa al principio si está al final
+            mostrarImagen();
+            resetIntervalo(); // Reinicia el intervalo al cambiar la imagen manualmente
+        }
+    
+        function resetIntervalo() {
+            clearInterval(intervalo); // Limpia el intervalo anterior
+            intervalo = setInterval(() => cambiarImagen(1), intervaloTiempo); // Inicia un nuevo intervalo
+        }
+    
+        // Inicializar el carrusel mostrando la primera imagen y comenzando el intervalo
+        mostrarImagen();
+        intervalo = setInterval(() => cambiarImagen(1), intervaloTiempo); // Cambiar automáticamente cada 3 segundos
+    </script>
+    <script>
+        // Mostrar/Ocultar la flecha de volver arriba
+        window.onscroll = function() {
+            const button = document.getElementById("scrollToTop");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block"; // Muestra el botón
+            } else {
+                button.style.display = "none"; // Oculta el botón
+            }
+        };
+
+        // Desplazarse hacia arriba suavemente
+        document.getElementById("scrollToTop").onclick = function(event) {
+            event.preventDefault(); // Evita el comportamiento por defecto
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Desplazamiento suave
+            });
+        };
+    </script>
+
 </body>
 </html>

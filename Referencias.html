@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Elementos de Red</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-holder">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="componentes.html">Componentes de Red</a></li>
+                    <li><a href="Herramientas.html">Herraminetas</a></li>
+                    <li><a href="Referencias.html">Referencias</a></li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <section class="contenido">
+        <h1>Referencias bibliograficas</h1>
+        <br>
+        <br>
+        <br>
+        <p>Puedes encontrar más información sobre componentes de red en el siguiente enlace:</p>
+        <br>
+        <hr class="pispile">      
+
+        <p><a href="https://aurtenetxea.com/herramienta-manual/crimpadora/#:~:text=Una%20Crimpadora%20de%20terminales%20no,a%20salir%20en%20cualquier%20momento." target="_blank">Da clicl aqui.</a></p>
+        <br>
+        <hr class="pispile">      
+
+        <p><a href="https://www.adrformacion.com/knowledge/administracion-de-sistemas/el_cableado_estructurado_de_una_red_de_area_local.html#:~:text=La%20norma%20EIA%2FTIA%20568B,cuarto%20de%20telecomunicaciones%20o%20viceversa." target="_blank">Da clicl aqui.</a></p>
+        <hr class="pispile">      
+
+        <br>
+        <p><a href="https://www.ui1.es/blog-ui1/estructura-de-redes-de-computadores" target="_blank">Da clicl aqui.</a></p>
+        <hr class="pispile">      
+
+        <br>
+        <p><a href="https://www.google.com/search?sca_esv=8536d3cccb765549&sca_upv=1&q=para+que+se+utiliza+un+cable+cruzado+en+la+red&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgWizR0-0aFOH11Sb5tlNhd3zC4y7ZXTSrvvSBSNjw8fVX3G3tS3bGsqQeBBxb6Hy8eSz-go-CzB06OlgnExibx3BqgLicT1PLt1SQKmxctJrYqtqi6QS831E_CJEisEhW4FzoNXaZPA0hyx_yyzBP8jEwwI_3BCgjJAM2-aIVFXB18O09&sa=X&ved=2ahUKEwj_zNOQ9uOIAxUbQzABHft3G5IQtKgLegQIFBAB&biw=1920&bih=953&dpr=1" target="_blank">Da clicl aqui.</a></p>
+        <hr class="pispile">      
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <br>
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+        <br>
+
+
+
+
+        <h1>Recreación del laboratorio 6</h1>
+
+        <img src="imagenes/lab 6 diagrama.PNG" alt="Imagen 1"width="600" height="400">
+        <br>
+        <br>
+
+
+    </section>
+
+
+    
+    <footer>
+        <p>&copy; 2024 - Samuel Antonio Sánchez Sánchez - Segundo año Desarrollo de software</p>
+    </footer>
+    <a href="#" id="scrollToTop" class="scroll-to-top">↑</a>
+
+
+
+    <script>
+        let index = 0; // Índice de la imagen actual
+        const imagenes = document.querySelectorAll('.carrusel-imagenes img');
+        const intervaloTiempo = 3000; // Cambia de imagen cada 3 segundos
+        let intervalo;
+    
+        function mostrarImagen() {
+            // Oculta todas las imágenes
+            imagenes.forEach((img, i) => {
+                img.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+    
+        function cambiarImagen(n) {
+            index += n; // Cambia el índice
+            if (index < 0) index = imagenes.length - 1; // Regresa al final si está al principio
+            if (index >= imagenes.length) index = 0; // Regresa al principio si está al final
+            mostrarImagen();
+            resetIntervalo(); // Reinicia el intervalo al cambiar la imagen manualmente
+        }
+    
+        function resetIntervalo() {
+            clearInterval(intervalo); // Limpia el intervalo anterior
+            intervalo = setInterval(() => cambiarImagen(1), intervaloTiempo); // Inicia un nuevo intervalo
+        }
+    
+        // Inicializar el carrusel mostrando la primera imagen y comenzando el intervalo
+        mostrarImagen();
+        intervalo = setInterval(() => cambiarImagen(1), intervaloTiempo); // Cambiar automáticamente cada 3 segundos
+    </script>
+
+<script>
+    // Mostrar/Ocultar la flecha de volver arriba
+    window.onscroll = function() {
+        const button = document.getElementById("scrollToTop");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            button.style.display = "block"; // Muestra el botón
+        } else {
+            button.style.display = "none"; // Oculta el botón
+        }
+    };
+
+    // Desplazarse hacia arriba suavemente
+    document.getElementById("scrollToTop").onclick = function(event) {
+        event.preventDefault(); // Evita el comportamiento por defecto
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Desplazamiento suave
+        });
+    };
+</script>
+
+</body>
+</html>
